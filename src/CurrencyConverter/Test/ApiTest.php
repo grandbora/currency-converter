@@ -10,14 +10,32 @@ use CurrencyConverter\Api;
  */
 class ApiTest extends \PHPUnit_Framework_TestCase
 {
+    protected $browser;
+    protected $api;
+
+    /**
+     *
+     */
+    protected function setUp()
+    {
+        $this->browser = $this->getMockBuilder('\Buzz\Browser')
+                    ->disableOriginalConstructor()
+                    ->getMock();
+
+        $this->api = new Api($this->browser);
+    }
+
     /**
      *
      */
     public function testRefreshRates()
     {
-        $api = new Api();
-        $api->refreshRates();
+        $this->browser->expects($this->once())
+            ->method('get')
+            ->with($this->equalTo('http://toolserver.org/~kaldari/rates.xml'));
 
-        $this->assertEquals('1001', $api->getRate('JPY'));
+        $this->api->refreshRates();
+
+        $this->assertEquals('1001', $this->api->getRate('JPY'));
     }
 }

@@ -1,4 +1,5 @@
 vendor
+web/report
 vagrant
 composer.phar
 .env

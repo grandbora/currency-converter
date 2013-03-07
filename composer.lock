@@ -1,5 +1,5 @@
 {
-    "hash": "a809b979849f4a929764c9354132d8c1",
+    "hash": "f6eed16dc30845662366c19dc7872a9a",
     "packages": [
         {
             "name": "doctrine/common",
@@ -202,6 +202,54 @@
                 "orm"
             ],
             "time": "2013-01-07 20:05:04"
+        },
+        {
+            "name": "kriswallsmith/buzz",
+            "version": "v0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/Buzz.git",
+                "reference": "v0.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/v0.9",
+                "reference": "v0.9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "ext-curl": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Buzz": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Lightweight HTTP client",
+            "homepage": "https://github.com/kriswallsmith/Buzz",
+            "keywords": [
+                "curl",
+                "http client"
+            ],
+            "time": "2013-02-19 00:26:38"
         },
         {
             "name": "symfony/console",

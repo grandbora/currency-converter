@@ -1,11 +1,12 @@
 {
     "name": "currency-converter",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "CurrencyConverter": "src/" }
     },
     "require": {
         "php": ">=5.3.2",
-        "doctrine/orm": "*"
+        "doctrine/orm": "*",
+        "kriswallsmith/buzz": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"

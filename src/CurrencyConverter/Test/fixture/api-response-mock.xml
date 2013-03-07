@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<response>
+<conversion>
+<currency>JPY</currency>
+<rate>0.013</rate>
+</conversion>
+<conversion>
+<currency>BGN</currency>
+<rate>0.6</rate>
+</conversion>
+<conversion>
+<currency>CZK</currency>
+<rate>0.05190</rate>
+</conversion>
+<conversion>
+<currency>ARS</currency>
+<rate>0.2294</rate>
+</conversion>
+<conversion>
+<currency>AUD</currency>
+<rate>1.0689</rate>
+</conversion>
+<conversion>
+<currency>CHF</currency>
+<rate>1.1154</rate>
+</conversion>
+</response>

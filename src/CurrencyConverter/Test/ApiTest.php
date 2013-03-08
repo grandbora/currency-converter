@@ -57,6 +57,8 @@ class ApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testRefreshRates()
     {
+        $fixtures = $this->loader->getFixtures();
+        $this->executor->execute($fixtures);
 
         $mockedXMLResponse = file_get_contents(__DIR__.'/Fixture/xml/api-response-mock.xml');
 
@@ -75,8 +77,8 @@ class ApiTest extends \PHPUnit_Framework_TestCase
 
 
         $this->api->refreshRates();
-
-        // $this->assertEquals(0.013, $this->api->getRate('JPY'));
-        // $this->assertEquals(0.6, $this->api->getRate('BGN'));
+        $this->assertEquals(1.013, $this->api->getRate('JPY')->getValue());
+        $this->assertEquals(2.6, $this->api->getRate('BGN')->getValue());
+        $this->assertEquals(3.05, $this->api->getRate('CZK')->getValue());
     }
 }

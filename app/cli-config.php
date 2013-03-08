@@ -1,6 +1,8 @@
 <?php
 use CurrencyConverter\DoctrineHelper;
 
+//putenv('ENV=test');
+
 require_once "bootstrap.php";
 
 $em = DoctrineHelper::getEntityManager();

@@ -3,14 +3,20 @@ use CurrencyConverter\DoctrineHelper;
 
 require_once(__DIR__.'/../vendor/autoload.php');
 
-$doctrineHelper = new DoctrineHelper();
-$doctrineHelper->setDbParams(array(
+$env = getenv('ENV');
+
+$isDevMode = in_array($env, array('test', 'development'));
+$dbname = $env === 'test' ? 'currency_converter_test' : 'currency_converter';
+$dbParams = array(
     'driver'   => 'pdo_mysql',
     'user'     => 'root',
     'password' => 'vagrant',
-    'dbname'   => 'currency_converter',
-));
+    'dbname'   => $dbname,
+);
+
+$doctrineHelper = new DoctrineHelper();
+$doctrineHelper->setDbParams($dbParams);
 $doctrineHelper->setPaths(array(__DIR__.'/../src/CurrencyConverter/Rate'));
-$doctrineHelper->setDevMode(true);
+$doctrineHelper->setDevMode($isDevMode);
 
 $doctrineHelper->init();

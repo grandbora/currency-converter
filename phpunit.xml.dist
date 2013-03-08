@@ -12,11 +12,16 @@
     syntaxCheck                 = "false"
     bootstrap                   = "app/bootstrap.php" >
 
+    <php>
+        <env name="ENV" value="test"/>
+    </php>
+    
     <testsuites>
         <testsuite name="tests">
             <directory>src/CurrencyConverter/Test</directory>
         </testsuite>
     </testsuites>
+
 
 <!--     <logging>
       <log type="coverage-html" target="web/report" charset="UTF-8"

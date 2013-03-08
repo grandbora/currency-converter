@@ -43,11 +43,11 @@ class Api
         }
     }
 
-    // /**
-    //  *
-    //  */
-    // public function convertToUS()
-    // {
-    // }
+    /**
+     *
+     */
+    public function convertToUS()
+    {
+    }
 }
  

@@ -17,8 +17,11 @@
     </php>
     
     <testsuites>
-        <testsuite name="tests">
-            <directory>src/CurrencyConverter/Test</directory>
+        <testsuite name="unit">
+            <directory>src/CurrencyConverter/Test/Unit</directory>
+        </testsuite>
+        <testsuite name="integration">
+            <directory>src/CurrencyConverter/Test/Integration</directory>
         </testsuite>
     </testsuites>
 

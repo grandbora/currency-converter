@@ -1,5 +1,5 @@
 <?php
-namespace CurrencyConverter\Test;
+namespace CurrencyConverter\Test\Integration;
 
 use CurrencyConverter\CurrencyConverter;
 

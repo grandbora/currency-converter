@@ -1,5 +1,5 @@
 <?
-namespace CurrencyConverter\Test\Fixture;
+namespace CurrencyConverter\Test\Integration\Fixture;
 
 use CurrencyConverter\Rate\Entity as RateEntity;
 use Doctrine\Common\Persistence\ObjectManager;

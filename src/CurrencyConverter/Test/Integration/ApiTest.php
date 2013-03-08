@@ -1,9 +1,9 @@
 <?php
-namespace CurrencyConverter\Test;
+namespace CurrencyConverter\Test\Integration;
 
 use CurrencyConverter\Api;
 use CurrencyConverter\DoctrineHelper;
-use CurrencyConverter\Test\Fixture\Rate as RateData;
+use CurrencyConverter\Test\Integration\Fixture\Rate as RateData;
 use Doctrine\Common\DataFixtures\Loader as FixtureLoader;
 use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
@@ -82,16 +82,4 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(3.05, $this->api->getRate('CZK')->getValue());
         $this->assertEquals(40.04, $this->api->getRate('CHF')->getValue());
     }
-
-
-    /**
-     *
-     */
-    // public function testConvert()
-    // {
-    //     $fixtures = $this->loader->getFixtures();
-    //     $this->executor->execute($fixtures);
-
-    //     $this->api->convertToUS('JPY', 5000);
-    // }
 }

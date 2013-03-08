@@ -42,5 +42,12 @@ class Api
             $this->rateRepository->insertOrUpdate($conversion->currency, $conversion->rate);
         }
     }
+
+    // /**
+    //  *
+    //  */
+    // public function convertToUS()
+    // {
+    // }
 }
  

@@ -1,7 +1,7 @@
 <?php
 namespace CurrencyConverter;
 
-use Buzz\Browser as BuzzBrowser;
+use Buzz\Browser;
 
 /**
  *
@@ -12,9 +12,9 @@ class Api
     private $browser;
 
     /**
-     * @param BuzzBrowser $browser
+     * @param Browser $browser
      */
-    public function __construct(BuzzBrowser $browser)
+    public function __construct(Browser $browser)
     {    
         $this->browser = $browser;
     }
@@ -33,6 +33,7 @@ class Api
     public function getRate()
     {
         return 1001;
+        //pass repository
     }
 }
  

@@ -30,8 +30,9 @@ class ApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetRate()
     {
-        $this->assertEquals(1.1, $this->api->getRate('JPY'));
-        $this->assertEquals(1.2, $this->api->getRate('BGN'));
+        $this->assertEquals(0.013, $this->api->getRate('JPY'));
+        $this->assertEquals(0.6, $this->api->getRate('BGN'));
+        $this->assertEquals(1.05, $this->api->getRate('CZK'));
     }
 
     /**
@@ -39,9 +40,22 @@ class ApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testRefreshRates()
     {
+
+        $mockedXMLResponse = file_get_contents(__DIR__.'/fixture/api-response-mock.xml');
+
+        $buzzResponse = $this->getMockBuilder('\Buzz\Message\Response')
+                    ->disableOriginalConstructor()
+                    ->getMock();
+
+        $buzzResponse->expects($this->once())
+            ->method('getContent')
+            ->will($this->returnValue($mockedXMLResponse));
+
         $this->browser->expects($this->once())
             ->method('get')
-            ->with($this->equalTo('http://toolserver.org/~kaldari/rates.xml'));
+            ->with($this->equalTo('http://toolserver.org/~kaldari/rates.xml'))
+            ->will($this->returnValue($buzzResponse));
+
 
         $this->api->refreshRates();
 

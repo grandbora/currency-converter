@@ -3,6 +3,11 @@ namespace CurrencyConverter\Test;
 
 use CurrencyConverter\Api;
 use CurrencyConverter\DoctrineHelper;
+use CurrencyConverter\Test\Fixture\Rate as RateData;
+use Doctrine\Common\DataFixtures\Loader as FixtureLoader;
+use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
+
 
 /**
  * CurrencyConverter Tests
@@ -11,6 +16,8 @@ use CurrencyConverter\DoctrineHelper;
  */
 class ApiTest extends \PHPUnit_Framework_TestCase
 {
+    protected $executor;
+    protected $loader;
     protected $browser;
     protected $api;
 
@@ -19,13 +26,15 @@ class ApiTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
+        $this->executor = new ORMExecutor(DoctrineHelper::getEntityManager(), new ORMPurger());
+
+        $this->loader = new FixtureLoader();
+        $this->loader->addFixture(new RateData);
+
         $this->browser = $this->getMockBuilder('\Buzz\Browser')
                     ->disableOriginalConstructor()
                     ->getMock();
-
         $rateRepository = DoctrineHelper::getRateRepository();
-        //$rateRepository->deleteAll();
-
         $this->api = new Api($rateRepository, $this->browser);
 
     }
@@ -35,6 +44,11 @@ class ApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetRate()
     {
+        $fixtures = $this->loader->getFixtures();
+        $this->executor->execute($fixtures);
+die;
+
+
         $this->assertEquals(0.013, $this->api->getRate('JPY'));
         $this->assertEquals(0.6, $this->api->getRate('BGN'));
         $this->assertEquals(1.05, $this->api->getRate('CZK'));
@@ -46,7 +60,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
     public function testRefreshRates()
     {
 
-        $mockedXMLResponse = file_get_contents(__DIR__.'/fixture/api-response-mock.xml');
+        $mockedXMLResponse = file_get_contents(__DIR__.'/Fixture/xml/api-response-mock.xml');
 
         $buzzResponse = $this->getMockBuilder('\Buzz\Message\Response')
                     ->disableOriginalConstructor()

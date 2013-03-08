@@ -27,8 +27,7 @@ class Api
      */
     public function getRate($currency)
     {
-        $rate = $this->rateRepository->findOneByName($currency);
-        return $rate->getValue();
+        return $this->rateRepository->findOneByName($currency);
     }
 
     /**

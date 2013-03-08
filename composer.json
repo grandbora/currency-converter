@@ -1,5 +1,6 @@
 {
     "name": "currency-converter",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-0": { "CurrencyConverter": "src/" }
     },
@@ -9,6 +10,7 @@
         "kriswallsmith/buzz": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "doctrine/data-fixtures": "*"
     }
 }

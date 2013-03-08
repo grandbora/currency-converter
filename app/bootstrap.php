@@ -1,8 +1,12 @@
 <?php
+
+require_once(__DIR__.'/../vendor/autoload.php');
+
+
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
-$paths = array(__DIR__.'/CurrencyConverter/Rate');
+$paths = array(__DIR__.'/../src/CurrencyConverter/Rate');
 $isDevMode = true;
 
 // the connection configuration

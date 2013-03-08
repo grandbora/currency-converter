@@ -80,5 +80,6 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1.013, $this->api->getRate('JPY')->getValue());
         $this->assertEquals(2.6, $this->api->getRate('BGN')->getValue());
         $this->assertEquals(3.05, $this->api->getRate('CZK')->getValue());
+        $this->assertEquals(40.04, $this->api->getRate('CHF')->getValue());
     }
 }

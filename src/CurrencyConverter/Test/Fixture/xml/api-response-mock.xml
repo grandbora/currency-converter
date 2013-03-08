@@ -12,4 +12,8 @@
 <currency>CZK</currency>
 <rate>3.05</rate>
 </conversion>
+<conversion>
+<currency>CHF</currency>
+<rate>40.04</rate>
+</conversion>
 </response>

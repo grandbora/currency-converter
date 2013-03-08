@@ -36,7 +36,11 @@ class Api
     public function refreshRates()
     {
         $response = $this->browser->get('http://toolserver.org/~kaldari/rates.xml');
-        $response->getContent();
+        $response = new \SimpleXMLElement($response->getContent());
+
+        foreach ($response->conversion as $conversion) {
+            $this->rateRepository->insertOrUpdate($conversion->currency, $conversion->rate);
+        }
     }
 }
  

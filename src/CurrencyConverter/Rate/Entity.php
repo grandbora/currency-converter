@@ -1,11 +1,15 @@
 <?php
-namespace CurrencyConverter\Rate\Entity;
+namespace CurrencyConverter\Rate;
 
 /**
- * @Entity
+ * @Entity(repositoryClass="CurrencyConverter\Rate\Repository")
+ * @Table(name="rate",
+ *      uniqueConstraints={@UniqueConstraint(name="name_unique",columns={"name"})},
+ *      indexes={@Index(name="name_idx", columns={"name"})})
  * 
+ * @author Bora Tunca
  */
-class Rate
+class Entity
 {
     /** 
      * @Id
@@ -23,4 +27,49 @@ class Rate
      * @Column(type="integer", nullable=false)
      */
     private $value;
+
+    /**
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+       return $this->id;
+    }
+
+    /**
+     *
+     * @param string $name
+     */
+    public function setName($name)
+    {
+       $this->name = $name;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function getName()
+    {
+       return $this->name;
+    }
+
+    /**
+     *
+     * @param string $value
+     */
+    public function setValue($value)
+    {
+       $this->value = $value;
+    }
+
+    /**
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+       return $this->value;
+    }
 }

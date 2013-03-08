@@ -32,8 +32,8 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $this->loader->addFixture(new RateData);
 
         $this->browser = $this->getMockBuilder('\Buzz\Browser')
-                    ->disableOriginalConstructor()
-                    ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $rateRepository = DoctrineHelper::getRateRepository();
         $this->api = new Api($rateRepository, $this->browser);
 
@@ -47,9 +47,21 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $fixtures = $this->loader->getFixtures();
         $this->executor->execute($fixtures);
 
-        $this->assertEquals(0.013, $this->api->getRate('JPY')->getValue());
-        $this->assertEquals(0.6, $this->api->getRate('BGN')->getValue());
-        $this->assertEquals(1.05, $this->api->getRate('CZK')->getValue());
+        $this->assertEquals(0.013, $this->api->getRate('JPY'));
+        $this->assertEquals(0.6, $this->api->getRate('BGN'));
+        $this->assertEquals(1.05, $this->api->getRate('CZK'));
+    }
+
+    /**
+     *
+     * @expectedException InvalidArgumentException
+     */
+    public function testGetNonExistingRate()
+    {
+        $fixtures = $this->loader->getFixtures();
+        $this->executor->execute($fixtures);
+
+        $this->api->getRate('NONEEXISTING');
     }
 
     /**
@@ -63,8 +75,8 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $mockedXMLResponse = file_get_contents(__DIR__.'/Fixture/xml/api-response-mock.xml');
 
         $buzzResponse = $this->getMockBuilder('\Buzz\Message\Response')
-                    ->disableOriginalConstructor()
-                    ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $buzzResponse->expects($this->once())
             ->method('getContent')
@@ -75,11 +87,10 @@ class ApiTest extends \PHPUnit_Framework_TestCase
             ->with($this->equalTo('http://toolserver.org/~kaldari/rates.xml'))
             ->will($this->returnValue($buzzResponse));
 
-
         $this->api->refreshRates();
-        $this->assertEquals(1.013, $this->api->getRate('JPY')->getValue());
-        $this->assertEquals(2.6, $this->api->getRate('BGN')->getValue());
-        $this->assertEquals(3.05, $this->api->getRate('CZK')->getValue());
-        $this->assertEquals(40.04, $this->api->getRate('CHF')->getValue());
+        $this->assertEquals(1.013, $this->api->getRate('JPY'));
+        $this->assertEquals(2.6, $this->api->getRate('BGN'));
+        $this->assertEquals(3.05, $this->api->getRate('CZK'));
+        $this->assertEquals(40.04, $this->api->getRate('CHF'));
     }
 }

@@ -2,6 +2,7 @@
 namespace CurrencyConverter\Unit\Test;
 
 use CurrencyConverter\Api;
+use CurrencyConverter\Rate\Entity as RateEntity;
 
 /**
  * CurrencyConverter Tests
@@ -34,8 +35,14 @@ class ApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testConvert()
     {
-     
+        // $rateEntity = new RateEntity();
+        // $rateEntity->setValue(0.0134);
 
-        $this->api->convertToUS('JPY', 5000);
+        // $this->rateRepository->expects($this->once())
+        //     ->method('findOneByName')
+        //     ->with($this->equalTo('currName'))
+        //     ->will($this->returnValue($rateEntity));
+
+        // $this->assertSame(7.37, $this->api->convertToUS('JPY', 550));
     }
 }

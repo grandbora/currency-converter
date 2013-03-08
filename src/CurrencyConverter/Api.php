@@ -24,10 +24,16 @@ class Api
 
     /**
      *
+     * @param string $currency
      */
     public function getRate($currency)
     {
-        return $this->rateRepository->findOneByName($currency);
+        $rate = $this->rateRepository->findOneByName($currency);
+        if (null === $rate) {
+            throw new \InvalidArgumentException("Currency \"$currency\" does not exist.");
+        }
+
+        return $rate->getValue();
     }
 
     /**
@@ -41,13 +47,6 @@ class Api
         foreach ($response->conversion as $conversion) {
             $this->rateRepository->insertOrUpdate($conversion->currency, $conversion->rate);
         }
-    }
-
-    /**
-     *
-     */
-    public function convertToUS()
-    {
     }
 }
  

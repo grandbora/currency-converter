@@ -1,7 +1,7 @@
 <?php
 use CurrencyConverter\DoctrineHelper;
 
-//putenv('ENV=test');
+//putenv('ENV=test'); // is used for test db creation
 
 require_once "bootstrap.php";
 

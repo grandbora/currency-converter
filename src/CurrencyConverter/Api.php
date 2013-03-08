@@ -25,6 +25,7 @@ class Api
     /**
      *
      * @param string $currency
+     * @return double
      */
     public function getRate($currency)
     {

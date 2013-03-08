@@ -2,6 +2,7 @@
 namespace CurrencyConverter\Test;
 
 use CurrencyConverter\Api;
+use CurrencyConverter\DoctrineHelper;
 
 /**
  * CurrencyConverter Tests
@@ -22,7 +23,11 @@ class ApiTest extends \PHPUnit_Framework_TestCase
                     ->disableOriginalConstructor()
                     ->getMock();
 
-        $this->api = new Api($this->browser);
+        $rateRepository = DoctrineHelper::getRateRepository();
+        //$rateRepository->deleteAll();
+
+        $this->api = new Api($rateRepository, $this->browser);
+
     }
 
     /**

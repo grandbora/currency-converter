@@ -24,7 +24,7 @@ class Entity
     private $name;
 
     /** 
-     * @Column(type="integer", nullable=false)
+     * @Column(type="float", nullable=false)
      */
     private $value;
 
@@ -57,11 +57,11 @@ class Entity
 
     /**
      *
-     * @param string $value
+     * @param mixed $value
      */
     public function setValue($value)
     {
-       $this->value = $value;
+       $this->value = (double)$value;
     }
 
     /**

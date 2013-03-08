@@ -1,6 +1,7 @@
 <?php
 namespace CurrencyConverter;
 
+use CurrencyConverter\Rate\Repository as RateRepository;
 use Buzz\Browser;
 
 /**
@@ -9,14 +10,25 @@ use Buzz\Browser;
  */
 class Api
 {
+    private $rateRepository;
     private $browser;
 
     /**
      * @param Browser $browser
      */
-    public function __construct(Browser $browser)
+    public function __construct(RateRepository $rateRepository, Browser $browser)
     {    
+        $this->rateRepository = $rateRepository;
         $this->browser = $browser;
+    }
+
+    /**
+     *
+     */
+    public function getRate($currency)
+    {
+        $rate = $this->rateRepository->findOneByName($currency);
+        return $rate->getValue();
     }
 
     /**
@@ -25,15 +37,7 @@ class Api
     public function refreshRates()
     {
         $response = $this->browser->get('http://toolserver.org/~kaldari/rates.xml');
-    }
-
-    /**
-     *
-     */
-    public function getRate()
-    {
-        return 1001;
-        //pass repository
+        $response->getContent();
     }
 }
  

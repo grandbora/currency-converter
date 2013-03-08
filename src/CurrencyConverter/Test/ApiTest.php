@@ -46,8 +46,6 @@ class ApiTest extends \PHPUnit_Framework_TestCase
     {
         $fixtures = $this->loader->getFixtures();
         $this->executor->execute($fixtures);
-die;
-
 
         $this->assertEquals(0.013, $this->api->getRate('JPY'));
         $this->assertEquals(0.6, $this->api->getRate('BGN'));

@@ -11,15 +11,10 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
  */
 class Rate implements FixtureInterface
 {
-    public function load(ObjectManager $manager)
-    {
+    $rate = new RateEntity();
+    $rate->setName('JPY');
+    $rate->setValue(0.013);
 
-        //REMOVE THIS
-        $rate = new RateEntity();
-        $rate->setName('JPY');
-        $rate->setValue(0.013);
-
-        $manager->persist($rate);
-        $manager->flush();
-    }
+    $manager->persist($rate);
+    $manager->flush();
 }

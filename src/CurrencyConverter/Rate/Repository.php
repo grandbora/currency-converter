@@ -9,12 +9,4 @@ use Doctrine\ORM\EntityRepository;
  */
 class Repository extends EntityRepository
 {
-    /**
-     *
-     */
-    public function deleteAll()
-    {
-        $query = $this->createQueryBuilder('r')->delete()->getQuery();
-        $query->getResult();
-    }
 }

@@ -15,12 +15,12 @@ App serves a simple page on which the user can choose one of the available curre
 ###Database
  * [``app/refresh.php``](app/refresh.php) file does the fetching of the currency rates. Fetched rates are stored in database. On each refresh, app updates the rates if there is a change in the retrieved currency rates. This script can be run periodically.
  * The table that holds the rates is never truncated by the app. Therefore it is not possible to remove a currency via app.
- * [Doctrine](http://www.doctrine-project.org/) orm tool is used to manage database transactions. Entity and repository classes can be found under [``Model/Rate``](src/Model/Rate). Doctrine configuration is done in 'app/bootstrap.php'. Model\DoctrineHelper is implemented in order to handle doctrine related configurations.
- * In order to to create the table that holds the rates, you can use "orm:schema-tool:update" command of doctrine. It will run the sql statement below on your database.
+ * [Doctrine](http://www.doctrine-project.org/) orm tool is used to manage database transactions. Entity and repository classes can be found under [``Model\Rate``](src/Model/Rate). Doctrine configuration is done in [``app/bootstrap.php``](app/bootstrap.php). [``Model\DoctrineHelper``](src/Model/DoctrineHelper/DoctrineHelper.php) is implemented in order to handle doctrine related configurations.
+ * In order to to create the table that holds the rates, you can use ``orm:schema-tool:update`` command of doctrine. It will run the sql statement below on your database.
 
-     ````CREATE TABLE exchange_rates 
-     (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(15) NOT NULL, 
-     value DOUBLE PRECISION NOT NULL, UNIQUE INDEX name_unique (name), PRIMARY KEY(id)) 
+     ````CREATE TABLE exchange_rates   
+     (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(15) NOT NULL,   
+     value DOUBLE PRECISION NOT NULL, UNIQUE INDEX name_unique (name), PRIMARY KEY(id))   
      DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB````
 
 ###Backend Structure

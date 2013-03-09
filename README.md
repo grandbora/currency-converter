@@ -51,5 +51,7 @@ App serves a simple page on which users can choose one of the available currenci
  In current implemetation I had to implement the twig and doctrine configurations to bootstrap file. Which does not look good. And current implementation had only one route which is hardcoded to index action. Obviously this prevents the implementation of new routes.  
  The initial idea was to avoid the complexities of a full stack framework for such a small application. But not using any at all, lead to other problems. As said earlier using a micro framework would resolve the issues. 
 
+ * [``Model\CurrencyConverter``](src/Model/CurrencyConverter.php) class is actually never used in the application, nevertheless, since it was in the requirements, it is implemented and tested. The required functionality is provided in this class.
+
  * The frontend, has a very small amount of logic implementation, therfore I did not create any a layer for that (meaning: I did not use backbone model), and implemented the logic to the backbone views. Of course in a more proper implementation those should be separated.
  

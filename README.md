@@ -6,14 +6,14 @@
 
 ##Story
 This is a small app which fetches the currency rates from an external source, and presents fixed amount of donation options for every available currency.  
-Currency rates are read from an external xml file and the values are stored locally in the database.  
+Currency rates are read from an [external xml](http://toolserver.org/~kaldari/rates.xml) file and the values are stored locally in the database.  
 App serves a simple page on which the user can choose one of the available currencies and then see the donation amounts in the currency that is selected.  
 
 ##Behind the curtains
 
 
 ###Database
- * 'app/refresh.php' file does the fetching of the currency rates. Fetched rates are stored in database. On each refresh, app updates the rates if there is a change for the retrieved currencies. This script can be run periodically.
+ * [``app/refresh.php``](sad) file does the fetching of the currency rates. Fetched rates are stored in database. On each refresh, app updates the rates if there is a change for the retrieved currencies. This script can be run periodically.
  * The table that holds the rates is never truncated by the app. Therefore it is not possible to remove a currency via app.
  * Doctrine orm tool is used to manage database transactions. Entity and repository classes can be found under Model/Rate. Doctrine configuration is done in 'app/bootstrap.php'. Model\DoctrineHelper is implemented in order to handle doctrine related configurations.
  * In order to to create the table that holds the rates, you can use "orm:schema-tool:update" command of doctrine. It will run the sql statement below on your database.

@@ -26,8 +26,13 @@ class Api
      *
      * @return array
      */
-    public function getCurrencyList()
+    public function getAllRates()
     {
+        $result = array();
+        foreach ($this->rateRepository->findAll() as $rate) {
+            $result[$rate->getName()] = $rate->getValue();
+        }
+        return $result;
     }
 
     /**

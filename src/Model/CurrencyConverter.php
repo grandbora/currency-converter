@@ -70,8 +70,8 @@ class CurrencyConverter
      *
      * @return array
      */
-    public function getAvailableCurrencyList()
+    public function getRates()
     {
-        return $this->api->getCurrencyList();
+        return $this->api->getAllRates();
     }
 }

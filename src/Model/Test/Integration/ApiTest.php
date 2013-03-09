@@ -35,7 +35,18 @@ class ApiTest extends \PHPUnit_Framework_TestCase
             ->getMock();
         $rateRepository = DoctrineHelper::getRateRepository();
         $this->api = new Api($rateRepository, $this->browser);
+    }
 
+    /**
+     *
+     */
+    public function testGetCurrencyList()
+    {
+        $fixtures = $this->loader->getFixtures();
+        $this->executor->execute($fixtures);
+
+        $expected = array('JPY'=> 0.013, 'BGN'=> 0.6, 'CZK'=> 1.05);
+        $this->assertEquals($expected, $this->api->getAllRates());
     }
 
     /**

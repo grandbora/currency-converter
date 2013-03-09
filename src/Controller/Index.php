@@ -1,7 +1,7 @@
 <?php
 namespace Controller;
 
-use Model\CurrencyConverter;
+use Model\Api;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -10,15 +10,15 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class Index
 {
-    private $currencyConverter;
+    private $api;
     private $twig;
 
     /**
      * @param 
      */
-    public function __construct(CurrencyConverter $currencyConverter, \Twig_Environment $twig)
+    public function __construct(Api $api, \Twig_Environment $twig)
     {    
-        $this->currencyConverter = $currencyConverter;
+        $this->api = $api;
         $this->twig = $twig;
     }
 
@@ -27,7 +27,7 @@ class Index
      */
     public function index()
     {
-        $currencyList = $this->currencyConverter->getRates();
+        $currencyList = $this->api->getAllRates();
 
         $content = $this->twig->render('index.html.twig',
             array('currencyList' => $currencyList));

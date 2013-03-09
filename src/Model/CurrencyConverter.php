@@ -64,14 +64,4 @@ class CurrencyConverter
             return $this->convertByString($amountString);
         }, $amountList);
     }
-
-    /**
-     * Returns the existing currencies
-     *
-     * @return array
-     */
-    public function getRates()
-    {
-        return $this->api->getAllRates();
-    }
 }

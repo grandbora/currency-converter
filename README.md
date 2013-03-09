@@ -18,7 +18,10 @@ App serves a simple page where the user can choose one of the available currenci
  * Doctrine orm tool is used to manage database transactions. Entity and repository classes can be found under Model/Rate. Doctrine configuration is done in 'app/bootstrap.php'. Model\DoctrineHelper is implemented in order to handle doctrine related configurations.
  * In order to to create the table that holds the rates, you can use "orm:schema-tool:update" command of doctrine. It will run the sql statement below on your database.
 
-     CREATE TABLE exchange_rates (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(15) NOT NULL, value DOUBLE PRECISION NOT NULL, UNIQUE INDEX name_unique (name), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
+     ````CREATE TABLE exchange_rates 
+     (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(15) NOT NULL, 
+     value DOUBLE PRECISION NOT NULL, UNIQUE INDEX name_unique (name), PRIMARY KEY(id)) 
+     DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB````
 
  ###Application Structure
  * All application logic resides in two models, Model\CurrencyConverter, Model\Api

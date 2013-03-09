@@ -2,8 +2,11 @@
 <html>
     <head>
         <title>Currency Converter</title>
+        <script>
+          var currencyList = {{ currencyList|json_encode|raw }};
+        </script>
     </head>
     <body>
-        Hello {{ name }} !!!.
+        Hello !!!.
     </body>
 </html>

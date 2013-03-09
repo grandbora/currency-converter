@@ -29,7 +29,8 @@ class Index
     {
         $currencyList = $this->currencyConverter->getRates();
 
-        $content = $this->twig->render('index.html.twig', array('currencyList' => $currencyList));
+        $content = $this->twig->render('index.html.twig',
+            array('currencyList' => $currencyList));
         return new Response($content);
     }
 }

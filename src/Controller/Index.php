@@ -1,6 +1,7 @@
 <?php
 namespace Controller;
 
+use CurrencyConverter\CurrencyConverter;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -9,13 +10,24 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class Index
 {
+    private $currencyConverter;
+    private $twig;
+
+    /**
+     * @param 
+     */
+    public function __construct(CurrencyConverter $currencyConverter, \Twig_Environment $twig)
+    {    
+        $this->currencyConverter = $currencyConverter;
+        $this->twig = $twig;
+    }
+
     /**
      * 
      */
     public function index()
     {
-        $res = new Response();
-        $res->setContent('HELLO SHIT');
-        return $res;
+        $content = $this->twig->render('index.html.twig', array('name' => 'Fabien'));
+        return new Response($content);
     }
 }

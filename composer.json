@@ -11,7 +11,8 @@
         "php": ">=5.3.3",
         "symfony/http-foundation":"*",
         "doctrine/orm": "*",
-        "kriswallsmith/buzz": "*"
+        "kriswallsmith/buzz": "*",
+        "twig/twig": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",

@@ -1,1 +1,1 @@
-README.md
+[![Build Status](https://travis-ci.org/grandbora/currency-converter.png)](https://travis-ci.org/grandbora/currency-converter)

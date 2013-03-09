@@ -45,5 +45,7 @@ App serves a simple page on which the user can choose one of the available curre
  
 
 ##More (todo notes to $self)
- * I did not want to use an
+ * Current database structure is not normalized. It would be better to separate the currency information(currency name, abbreviation and symbol) from currency rates.
+ * I did not want to use a framework at first, rather I decided to include only the necessary libraries I needed. The reason for that was the very few amount of routing the application had. But during the implementation I realized that, it would be nice to use a micro framework like [silex](http://silex.sensiolabs.org/).
+ * The frontend, has a very small amount of logic implementation, therfore I did not create any a layer for that (meaning: I did not use backbone model), and implemented the logic to the backbone views. Of course in a more proper implementation those should be separated.
  

@@ -9,9 +9,21 @@ define(function(){
      ,'data-inline':'true'
     }
 
+   ,events: {
+      "click" : "donate",
+    }
+
+   ,donate: function() {
+    debugger
+      url = '/donate?'
+      url += 'value=' + this.options.convertedValue
+      url += '&currency=' + this.options.currency
+      window.location.replace(url) 
+    }
+
    ,update: function(currency, rate) {
 
-      convertedValue = this.options.originalValue / rate
+      var convertedValue = this.options.originalValue / rate
       this.options.convertedValue = Math.round(convertedValue * 100) / 100
       this.options.currency = currency
 

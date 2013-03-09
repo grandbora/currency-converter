@@ -28,7 +28,7 @@ App serves a simple page on which users can choose one of the available currenci
  * [``Model\Api``](src/Model/Api.php) uses [buzz library](https://github.com/kriswallsmith/Buzz) fo fetch external xml file. [Curl client](https://github.com/kriswallsmith/Buzz/blob/master/lib/Buzz/Client/Curl.php) is used for fetching.
  * The contoller of the index page is located under [``Controller\Index``](src/Controller/Index.php). The view is located under [``View\index.htl.twig``](src/View/index.html.twig). [Controller](src/Controller/Index.php) just passes the rate information to the [view](src/View/index.html.twig), and all the calculations are done on the client side.
  * [Response](https://github.com/symfony/HttpFoundation/blob/master/Response.php) class of [Symfony Http Foundation component](https://github.com/symfony/HttpFoundation) is returned by the [index action](https://github.com/grandbora/currency-converter/blob/master/src/Controller/Index.php#L28) and used for sending the content to the client.
- * [Twig](http://twig.sensiolabs.org/) is used for templating. Configuration is done in [``app/bootstrap.php``](app/bootstrap.php).
+ * [Twig](http://twig.sensiolabs.org/) is used for templating. Configuration is done in [``app/bootstrap.php``](web/index.php).
 
 ###Frontend Structure
  * There is a thin client side application which is reponsible for calculations and redirections.

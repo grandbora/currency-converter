@@ -1,7 +1,7 @@
 <?php
 use CurrencyConverter\DoctrineHelper;
 
-require_once(__DIR__.'/../vendor/autoload.php');
+require_once __DIR__.'/../vendor/autoload.php';
 
 $env = getenv('ENV');
 

@@ -1,11 +1,11 @@
-define(['model/currencylist', 'view/currencylist'], function(CurrencyList, CurrencyListView){
+define(['view/currencylist'], function(CurrencyListView){
   App = function(){}
 
   App.prototype.start = function(){
 
-    var currencyList = new CurrencyList()
-
-    var currencyListView = new CurrencyListView()
+    var currencyListView = new CurrencyListView({
+      data:currencyListData
+    })
     
     var currencyListEl = currencyListView.render().$el
 

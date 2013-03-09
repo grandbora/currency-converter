@@ -7,7 +7,7 @@
 ##Story
 This is a small app which fetches the currency rates from an external source, and presents fixed amount of donation options for every available currency.  
 Currency rates are read from an external xml file and the values are stored locally in the database.  
-App serves a simple page where the user can choose one of the available currencies and then see the donation amounts in the currency that is selected.  
+App serves a simple page on which the user can choose one of the available currencies and then see the donation amounts in the currency that is selected.  
 
 ##Behind the curtains
 
@@ -23,10 +23,17 @@ App serves a simple page where the user can choose one of the available currenci
      value DOUBLE PRECISION NOT NULL, UNIQUE INDEX name_unique (name), PRIMARY KEY(id)) 
      DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB````
 
- ###Application Structure
- * All application logic resides in two models, Model\CurrencyConverter, Model\Api
+###Backend Structure
+ * All application logic resides in two models, Model\CurrencyConverter and Model\Api. Model\Api is responsible for fetching the rates and updating the database records. Model\CurrencyConverter is responsible for doing conversion calculations. Supports various formats of inputs.
+ * Model\Api uses buzz library fo fetch external xml file. Curl client is used for fetching.
+ * The contoller of the index page is located under Controller\index. The view is located under View\index.htl.twig. 
+ * Controller just passes the rate information to the view, and all the calculations are done on the client side.
+ * Twig is used for templating.
 
-to be continued
+###Frontend Structure
+ * There is a thin client side application which is reponsible for calculations and redirections.
+ * Require.js is used for module loading. Backbone is used for creating the individual views and interaction handling. jQuery is used for dom manipulation and jQueryMobile is used to create mobile friendly UI.
+
 
 
 
@@ -38,3 +45,5 @@ Testing
 phpunit
 
 add links memes
+
+bootstrap

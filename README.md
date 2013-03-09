@@ -52,7 +52,7 @@ App serves a simple page on which users can choose one of the available currenci
 
  * The frontend, has a very small amount of logic implementation, therfore I did not create any a layer for that (meaning: I did not use backbone models), and implemented the logic to the backbone views. Of course in a more proper implementation those should be separated.
 
- * I did not use any templating on the client side. A more appropriate was would be using a client side templating.
+ * I did not use any templating on the client side. A more appropriate way would be using a client side templating.
  
 ##Finally
 * [``Model\CurrencyConverter``](src/Model/CurrencyConverter.php) class is actually never used in the application, nevertheless, since it was in the requirements, it is implemented and tested. The required functionality is provided in this class.

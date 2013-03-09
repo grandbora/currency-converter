@@ -1,5 +1,5 @@
 {
-    "hash": "bb05fffefedf6761d415e7391b066e2a",
+    "hash": "85d687698b10cecd53376199c1a759b8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1200,7 +1200,7 @@
 
     ],
     "platform": {
-        "php": ">=5.3.3"
+        "php": ">=5.4"
     },
     "platform-dev": [
 

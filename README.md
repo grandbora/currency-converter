@@ -13,7 +13,7 @@ App serves a simple page on which the user can choose one of the available curre
 
 
 ###Database
- * [``app/refresh.php``](sad) file does the fetching of the currency rates. Fetched rates are stored in database. On each refresh, app updates the rates if there is a change for the retrieved currencies. This script can be run periodically.
+ * [``app/refresh.php``](app/refresh.php) file does the fetching of the currency rates. Fetched rates are stored in database. On each refresh, app updates the rates if there is a change for the retrieved currencies. This script can be run periodically.
  * The table that holds the rates is never truncated by the app. Therefore it is not possible to remove a currency via app.
  * Doctrine orm tool is used to manage database transactions. Entity and repository classes can be found under Model/Rate. Doctrine configuration is done in 'app/bootstrap.php'. Model\DoctrineHelper is implemented in order to handle doctrine related configurations.
  * In order to to create the table that holds the rates, you can use "orm:schema-tool:update" command of doctrine. It will run the sql statement below on your database.

@@ -7,7 +7,7 @@
 ##Story
 This is a small app which fetches the currency rates from an external source, and presents fixed amount of donation options for every available currency.  
 Currency rates are read from an [external xml](http://toolserver.org/~kaldari/rates.xml) file and the values are stored locally in the database.  
-App serves a simple page on which the user can choose one of the available currencies and then see the donation amounts in the currency that is selected.  
+App serves a simple page on which users can choose one of the available currencies and then see the donation amounts in the currency that is selected.  
 
 ##Behind the curtains
 
@@ -46,7 +46,7 @@ App serves a simple page on which the user can choose one of the available curre
 
 ##More (todo notes to $self)
  * Current database structure is not normalized. It would be better to separate the currency information(currency name, abbreviation and symbol) from currency rates.
- 
+
  * I did not want to use a framework at first, rather I decided to include only the necessary libraries I needed. The reason for that was the very few amount of routing the application had. But during the implementation I realized that, it would be nice to use a micro framework like [silex](http://silex.sensiolabs.org/).   
  In current implemetation I had to implement the twig and doctrine configurations to bootstrap file. Which does not look good. And current implementation had only one route which is hardcoded to index action. Obviously this prevents the implementation of new routes.  
  The initial idea was to avoid the complexities of a full stack framework for such a small application. But not using any at all, lead to other problems. As said earlier using a micro framework would resolve the issues. 

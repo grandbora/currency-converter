@@ -26,7 +26,5 @@ require(['app'], function(App){
   
   $(function() {
     app.start()
-
-    $('body').trigger('create'); // trigger jq mobile
   })
 })

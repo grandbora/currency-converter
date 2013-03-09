@@ -1,18 +1,24 @@
 define(function(){
   DonateButtonView = Backbone.View.extend({
 
-    attributes:{
+    tagName: 'a'
+
+   ,attributes:{
+      'href':'#'
+     ,'data-role':'button'
+     ,'data-inline':'true'
     }
 
    ,update: function(currency, rate) {
-      console.log(this.options.originalValue, 'update')
 
-      console.log(arguments)
-      debugger
+      convertedValue = this.options.originalValue / rate
+      this.options.convertedValue = Math.round(convertedValue * 100) / 100
+      this.options.currency = currency
+
+      this.$el.find('.ui-btn-text').text(this.options.convertedValue + ' ' + currency)
     }
 
    ,render: function() {
-      console.log(this.options.originalValue)
       return this
     }
   })

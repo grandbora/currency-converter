@@ -34,6 +34,7 @@ define(['view/currencylist', 'view/donatebutton'], function(CurrencyListView, Do
       $('body').append(buttonEl)
     })
 
+    $('body').trigger('create'); // trigger jq mobile
     currencyListView.triggerCurrencyChange() // in order to setup default selected value
   }
 

@@ -26,8 +26,7 @@ App serves a simple page on which users can choose one of the available currenci
 ###Backend Structure
  * All application logic resides in two models, [``Model\CurrencyConverter``](src/Model/CurrencyConverter.php) and [``Model\Api``](src/Model/Api.php). [``Model\Api``](src/Model/Api.php) is responsible for fetching the rates and updating the database records. [``Model\CurrencyConverter``](src/Model/CurrencyConverter.php) is responsible for doing conversion calculations. Supports various formats of inputs.
  * [``Model\Api``](src/Model/Api.php) uses [buzz library](https://github.com/kriswallsmith/Buzz) fo fetch external xml file. [Curl client](https://github.com/kriswallsmith/Buzz/blob/master/lib/Buzz/Client/Curl.php) is used for fetching.
- * The contoller of the index page is located under [``Controller\Index``](src/Controller/Index.php). The view is located under [``View\index.htl.twig``](src/View/index.html.twig). 
- * [Controller](src/Controller/Index.php) just passes the rate information to the [view](src/View/index.html.twig), and all the calculations are done on the client side.
+ * The contoller of the index page is located under [``Controller\Index``](src/Controller/Index.php). The view is located under [``View\index.htl.twig``](src/View/index.html.twig). [Controller](src/Controller/Index.php) just passes the rate information to the [view](src/View/index.html.twig), and all the calculations are done on the client side.
  * [Response](https://github.com/symfony/HttpFoundation/blob/master/Response.php) class of [Symfony Http Foundation component](https://github.com/symfony/HttpFoundation) is returned by the [index action](https://github.com/grandbora/currency-converter/blob/master/src/Controller/Index.php#L28).
  * [Twig](http://twig.sensiolabs.org/) is used for templating. Configuration is done in [``app/bootstrap.php``](app/bootstrap.php).
 

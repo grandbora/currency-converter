@@ -39,16 +39,9 @@ App serves a simple page on which the user can choose one of the available curre
  * For database setup, you may need to change the credentials in ``app/bootrap.php``.
 
  ##Testing
- * Models are tested. You can run ``phpunit`` on root folder of the project
- * For database setup, you may need to change the credentials in ``app/bootrap.php``.
-
-
-
-installation composer
-Testing
-phpunit
+ * Models are tested. You can run ``phpunit`` on root folder of the project.
+ 
 
 add links memes
-
 bootstrap
 Framework NO

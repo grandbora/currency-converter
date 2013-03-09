@@ -28,17 +28,21 @@ App serves a simple page on which the user can choose one of the available curre
  * Model\Api uses buzz library fo fetch external xml file. Curl client is used for fetching.
  * The contoller of the index page is located under Controller\index. The view is located under View\index.htl.twig. 
  * Controller just passes the rate information to the view, and all the calculations are done on the client side.
- * Twig is used for templating.
+ * Twig is used for templating. Configuration is done in ``app/bootrap.php``.
 
 ###Frontend Structure
  * There is a thin client side application which is reponsible for calculations and redirections.
  * Require.js is used for module loading. Backbone is used for creating the individual views and interaction handling. jQuery is used for dom manipulation and jQueryMobile is used to create mobile friendly UI.
 
+##Installation
+ * Php dependencies are managed by composer(*).
+ * For database setup, you may need to change the credentials in ``app/bootrap.php``.
+
+ ##Testing
+ * Models are tested. You can run ``phpunit`` on root folder of the project
+ * For database setup, you may need to change the credentials in ``app/bootrap.php``.
 
 
-
-Framework
-NO
 
 installation composer
 Testing
@@ -47,3 +51,4 @@ phpunit
 add links memes
 
 bootstrap
+Framework NO

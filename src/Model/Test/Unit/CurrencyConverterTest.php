@@ -1,10 +1,9 @@
 <?php
-namespace CurrencyConverter\Test\Unit;
+namespace Model\Test\Unit;
 
-use CurrencyConverter\CurrencyConverter;
+use Model\CurrencyConverter;
 
 /**
- * CurrencyConverter Tests
  *
  * @author Bora Tunca
  */
@@ -18,7 +17,7 @@ class CurrencyConverterTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->api = $this->getMockBuilder('\CurrencyConverter\Api')
+        $this->api = $this->getMockBuilder('\Model\Api')
                     ->disableOriginalConstructor()
                     ->getMock();
 

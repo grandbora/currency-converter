@@ -1,7 +1,7 @@
 <?
-namespace CurrencyConverter\Test\Integration\Fixture;
+namespace Model\Test\Integration\Fixture;
 
-use CurrencyConverter\Rate\Entity as RateEntity;
+use Model\Rate\Entity as RateEntity;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 

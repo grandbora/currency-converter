@@ -1,7 +1,7 @@
 <?php
-namespace CurrencyConverter;
+namespace Model;
 
-use CurrencyConverter\Rate\Repository as RateRepository;
+use Model\Rate\Repository as RateRepository;
 use Buzz\Browser;
 
 /**

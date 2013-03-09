@@ -1,8 +1,8 @@
 <?php
-namespace CurrencyConverter\Rate;
+namespace Model\Rate;
 
 /**
- * @Entity(repositoryClass="CurrencyConverter\Rate\Repository")
+ * @Entity(repositoryClass="Model\Rate\Repository")
  * @Table(name="exchange_rates",
  *      uniqueConstraints={@UniqueConstraint(name="name_unique",columns={"name"})},
  *      indexes={@Index(name="name_idx", columns={"name"})})

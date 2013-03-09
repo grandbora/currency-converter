@@ -18,10 +18,10 @@
     
     <testsuites>
         <testsuite name="unit">
-            <directory>src/CurrencyConverter/Test/Unit</directory>
+            <directory>src/Model/Test/Unit</directory>
         </testsuite>
         <testsuite name="integration">
-            <directory>src/CurrencyConverter/Test/Integration</directory>
+            <directory>src/Model/Test/Integration</directory>
         </testsuite>
     </testsuites>
 

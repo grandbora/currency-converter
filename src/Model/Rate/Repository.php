@@ -1,5 +1,5 @@
 <?php
-namespace CurrencyConverter\Rate;
+namespace Model\Rate;
 
 use Doctrine\ORM\EntityRepository;
 

@@ -1,5 +1,5 @@
 <?php
-namespace CurrencyConverter;
+namespace Model;
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
@@ -65,11 +65,11 @@ class DoctrineHelper
 
     /**
      *
-     * @return CurrencyConverter\Rate\Repository
+     * @return Model\Rate\Repository
      */
     public static function getRateRepository()
     {
         $em = self::getEntityManager();
-        return $em->getRepository('CurrencyConverter\Rate\Entity');
+        return $em->getRepository('Model\Rate\Entity');
     }
 }

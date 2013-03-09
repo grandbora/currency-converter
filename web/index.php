@@ -1,9 +1,9 @@
 <?php
 
 use Controller\Index as IndexController;
-use CurrencyConverter\CurrencyConverter;
-use CurrencyConverter\Api;
-use CurrencyConverter\DoctrineHelper;
+use Model\CurrencyConverter;
+use Model\Api;
+use Model\DoctrineHelper;
 use Buzz\Browser;
 use Buzz\Client\Curl;
 

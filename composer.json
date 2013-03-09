@@ -3,7 +3,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": { 
-            "CurrencyConverter": "src/",
+            "Model": "src/",
             "Controller": "src/" 
         }
     },

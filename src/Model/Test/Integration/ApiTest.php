@@ -1,16 +1,15 @@
 <?php
-namespace CurrencyConverter\Test\Integration;
+namespace Model\Test\Integration;
 
-use CurrencyConverter\Api;
-use CurrencyConverter\DoctrineHelper;
-use CurrencyConverter\Test\Integration\Fixture\Rate as RateData;
+use Model\Api;
+use Model\DoctrineHelper;
+use Model\Test\Integration\Fixture\Rate as RateData;
 use Doctrine\Common\DataFixtures\Loader as FixtureLoader;
 use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 
 
 /**
- * CurrencyConverter Tests
  *
  * @author Bora Tunca
  */

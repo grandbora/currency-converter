@@ -1,5 +1,5 @@
 <?php
-use CurrencyConverter\DoctrineHelper;
+use Model\DoctrineHelper;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -16,7 +16,7 @@ $dbParams = array(
 
 $doctrineHelper = new DoctrineHelper();
 $doctrineHelper->setDbParams($dbParams);
-$doctrineHelper->setPaths(array(__DIR__.'/../src/CurrencyConverter/Rate'));
+$doctrineHelper->setPaths(array(__DIR__.'/../src/Model/Rate'));
 $doctrineHelper->setDevMode($isDevMode);
 
 $doctrineHelper->init();

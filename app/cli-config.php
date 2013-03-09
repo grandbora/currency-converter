@@ -1,5 +1,5 @@
 <?php
-use CurrencyConverter\DoctrineHelper;
+use Model\DoctrineHelper;
 
 //putenv('ENV=test'); // is used for test db creation
 

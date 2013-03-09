@@ -1,7 +1,7 @@
 <?php
-namespace CurrencyConverter;
+namespace Model;
 
-use CurrencyConverter\Api;
+use Model\Api;
 
 /**
  *

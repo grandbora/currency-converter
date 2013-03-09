@@ -1,6 +1,6 @@
 <?php
-use CurrencyConverter\Api;
-use CurrencyConverter\DoctrineHelper;
+use Model\Api;
+use Model\DoctrineHelper;
 use Buzz\Browser;
 use Buzz\Client\Curl;
 

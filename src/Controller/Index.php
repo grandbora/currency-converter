@@ -1,7 +1,7 @@
 <?php
 namespace Controller;
 
-use CurrencyConverter\CurrencyConverter;
+use Model\CurrencyConverter;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

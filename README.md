@@ -32,16 +32,16 @@ App serves a simple page on which the user can choose one of the available curre
 
 ###Frontend Structure
  * There is a thin client side application which is reponsible for calculations and redirections.
- * Require.js is used for module loading. Backbone is used for creating the individual views and interaction handling. jQuery is used for dom manipulation and jQueryMobile is used to create mobile friendly UI.
+ * [Require.js](http://requirejs.org/) is used for module loading. [Backbone](http://backbonejs.org/) is used for creating the individual views and interaction handling. [jQuery](http://jquery.com/) is used for dom manipulation and [jQueryMobile](http://jquerymobile.com/) is used to create mobile friendly UI.
 
 ##Installation
- * Php dependencies are managed by composer(*).
- * For database setup, you may need to change the credentials in ``app/bootrap.php``.
+ * Php dependencies are managed by [composer](http://getcomposer.org/)([*](http://cdn.memegenerator.net/instances/400x/29641170.jpg)).
+ * For database setup, you may need to change the credentials in [``app/bootstrap.php``](app/bootstrap.php).
 
  ##Testing
  * Models are tested. You can run ``phpunit`` on root folder of the project.
+ * [Travis CI](https://travis-ci.org/) is running the unit tests only.
  
 
-add links memes
 bootstrap
 Framework NO

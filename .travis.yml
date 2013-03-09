@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+
+before_script:
+    - COMPOSER_ROOT_VERSION=dev-master composer --prefer-source --dev install
+
+notifications:
+  email:
+    recipients:
+      - bora.tunca@yahoo.com
+    on_success: always
+    on_failure: always

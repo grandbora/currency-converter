@@ -27,7 +27,9 @@ class Index
      */
     public function index()
     {
-        $content = $this->twig->render('index.html.twig', array('name' => 'Fabien'));
+        $currencyList = $this->currencyConverter->getAvailableCurrencyList();
+
+        $content = $this->twig->render('index.html.twig', array('currencyList' => $currencyList));
         return new Response($content);
     }
 }

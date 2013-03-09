@@ -86,4 +86,18 @@ class CurrencyConverterTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     *
+     */
+    public function testGetAvailableCurrencyList()
+    {
+        $apiResponse = array('CUR1', 'CUR2','CUR3');
+        $this->api->expects($this->once())
+            ->method('getCurrencyList')
+            ->will($this->returnValue($apiResponse));
+
+        $actual = $this->currencyConverter->getAvailableCurrencyList();
+        $this->assertSame($apiResponse, $actual);
+    }
 }

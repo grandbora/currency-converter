@@ -24,6 +24,14 @@ class Api
 
     /**
      *
+     * @return array
+     */
+    public function getCurrencyList()
+    {
+    }
+
+    /**
+     *
      * @param string $currency
      * @return double
      */

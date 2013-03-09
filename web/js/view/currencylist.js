@@ -5,6 +5,15 @@ define(function(){
       'data-role' : 'fieldcontain'
     }
 
+   ,events: {
+      "change select" : "triggerCurrencyChange",
+    }
+
+   ,triggerCurrencyChange: function() {
+      var selected = this.$el.find('select option:selected')
+      this.trigger("change:selectedCurrency", selected.text(), selected.val())
+   }
+
    ,render: function() {
 
       var label = $('<label>').attr('for', 'select-currency')
@@ -30,5 +39,3 @@ define(function(){
 
   return CurrencyListView
 })
-
-

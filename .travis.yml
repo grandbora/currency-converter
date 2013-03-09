@@ -6,6 +6,8 @@ php:
 before_script:
     - composer --dev install
 
+script: phpunit --testsuite unit --coverage-text
+
 notifications:
   email:
     recipients:
